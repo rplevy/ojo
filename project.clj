@@ -9,5 +9,4 @@
                  [commons-io/commons-io "2.3"]
                  [fs "1.2.0"]]
   :profiles {:dev {:dependencies [[midje "1.4.0"]]}}
-  :plugins [[lein-cucumber "1.0.0"]
-            [lein-midje "2.0.0-SNAPSHOT"]])
+  :plugins [[lein-midje "2.0.0-SNAPSHOT"]])
