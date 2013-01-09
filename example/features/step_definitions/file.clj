@@ -1,6 +1,5 @@
 (require '[midje.sweet :refer :all]
-         '[fs.core :as fs]
-         '[darker-rabbit.core :as rabbit])
+         '[fs.core :as fs])
 
 (import 'java.io.File
         'org.apache.commons.io.FileUtils)
