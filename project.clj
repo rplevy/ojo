@@ -1,4 +1,4 @@
-(defproject ojo "1.0.0"
+(defproject ojo "1.1.0"
   :description "Respond to file system events using the Java 7 Watch Service API."
   :url "https://clojars.org/ojo"
   :license {:name "Eclipse Public License"

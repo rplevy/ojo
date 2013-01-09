@@ -3,11 +3,15 @@
 (defmacro response [& body]
   `(fn [{~'*events* :events, ~'*state* :state, ~'*settings* :settings
          :as info#}]
-     (let [{events# :events, state# :state, settings# :settings
-            :as resultant#} (do ~@body)]
+     (let [evaluated-to*# (do ~@body)
+           evaluated-to# (if (map? evaluated-to*#)
+                           (select-keys evaluated-to*#
+                                        [:events :state :settings])
+                           {})
+           {events# :events, state# :state, settings# :settings} evaluated-to#]
        (when (or (nil? events#)  ; not specified => no modification of events
                  (not (empty? events#))) ; empty => nil shortcut -?>> pipeline
-         (merge info# resultant#)))))
+         (merge info# evaluated-to#)))))
 
 (defmacro defresponse [name & body] `(def ~name (response ~@body)))
 

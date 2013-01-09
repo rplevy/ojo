@@ -25,8 +25,7 @@
         (reset! result
                 (format "%s%s"
                         (slurp file)
-                        (if appended-only? "(append-only)" "")))
-        (no-updates)))
+                        (if appended-only? "(append-only)" "")))))
     (start-watch watcher)))
 
 (defn -main [& [env & args]]
