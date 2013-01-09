@@ -38,7 +38,8 @@
   (config/with-env env
     (println "starting watcher...")
     (start
-     ;; command-line usage, eg. --watcher.parallel true, etc...
+     ;; command-line usage:
+     ;; lein run -m example.watcher dev --watcher.parallel true --watcher.dir '"/tmp/"' --watcher.extensions '"throttle and track-appends"'
      (config/value :watcher :parallel)
      (config/value :watcher :dir)
      (config/value :watcher :extensions))))
