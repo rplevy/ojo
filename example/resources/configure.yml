@@ -1,0 +1,10 @@
+dev:
+  watcher:
+    throttle-period: 1000
+    worker-poll-ms: 500
+
+test:
+  cucumber-filewatch-sleep: 5000
+  watcher:
+    throttle-period: 1000
+    worker-poll-ms: 500
