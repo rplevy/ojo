@@ -22,7 +22,7 @@ TODO: write
 
 ### Example Project
 
-Executable usage documentation can be found in the cucumber [features](http://www.example.com "TODO") and [step definitions](http://www.example.com "TODO") for the ```example/``` project included in this repo. Run ```lein cucumber``` to test these example scenarios.
+Executable usage documentation can be found in the cucumber [features](https://github.com/drakerlabs/ojo/tree/master/example/features) and [step definitions](https://github.com/drakerlabs/ojo/tree/master/example/features/step_definitions) for the ```example/``` project included in this repo. Run ```lein cucumber``` to test these example scenarios.
 
 ## License
 
