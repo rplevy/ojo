@@ -19,8 +19,3 @@
   "in a response, setting events to an empty coll cuts further processing short"
   []
   {:events []})
-
-(defn no-updates
-  "in a response, not passing any keys means no updates, pass what was input"
-  []
-  {})
