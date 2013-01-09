@@ -24,5 +24,4 @@
       (finally (cease-watch watch)))
     (throw (Exception. "No such watcher."))))
 
-(def no-updates respond/no-updates)
 (def drop-events respond/drop-events)
