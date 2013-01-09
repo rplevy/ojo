@@ -10,7 +10,7 @@
 
 (defn start [parallel? dir extensions-str]
   (let [extensions (condp = extensions-str
-                     "throttle" [throttle]
+                     "throttle"                   [throttle]
                      "throttle and track-appends" [throttle track-appends]
                      [])]
     (defwatch watcher
@@ -22,13 +22,11 @@
        :settings {:throttle-period (config/value :watcher :throttle-period)}}
       (let [[{:keys [file kind appended-only? bit-position] :as evt}]
             *events*]
-        (swap! result
-               (fn [r]
-                 (str (when r (str r ","))
-                      (if appended-only?
-                        (str "\n" (slurp file))
-                        (with-open [rdr (io/reader file)]
-                          (slurp (doto rdr (.skip (or bit-position 0)))))))))))
+        (reset! result
+                (format "%s%s"
+                        (slurp file)
+                        (if appended-only? "(append-only)" "")))
+        (no-updates)))
     (start-watch watcher)))
 
 (defn -main [& [env & args]]

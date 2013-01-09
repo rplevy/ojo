@@ -7,6 +7,7 @@
 
 (Given #"^the directory \"([^\"]*)\" is empty" [directory]
   (fs/delete-dir directory)
+  (assert (fact (fs/exists? directory) => falsey))
   (fs/mkdirs directory))
 
 (When #"^the following data is (written|appended) to \"([^\"]*)\":$"

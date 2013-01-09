@@ -13,26 +13,23 @@ Feature: Notice append vs non-append file changes.
       """
       foo
       """
-    Then the following data should be in the result atom.
-      """
-      foo
-      """
-
-    When the following data is appended to "target/test_files/goodstring.dat":
+    And the following data is appended to "target/test_files/goodstring.dat":
       """
       bar
       """
-    Then the following message should be in the result atom.
+    Then the following data should be in the result atom
       """
-      foo,bar
+      foo
+      bar
+      (append-only)
       """
 
     When the following data is written to "target/test_files/goodstring.dat":
       """
       baz
       """
-    Then the following message should be in the result atom.
+    Then the following data should be in the result atom
       """
-      foo,bar,
       baz
+
       """
