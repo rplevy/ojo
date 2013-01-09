@@ -13,7 +13,8 @@ Feature: Don't use any extensions
       """
       foo
       """
-    Then the following data should be in the result atom.
+    Then the following data should be in the result atom
       """
       foo
+
       """
