@@ -15,17 +15,18 @@ Feature: Filename pattern matching
       """
       some data.
       """
-    Then the result atom should be empty.
+    Then the result atom should be empty
     When the following data is written to "target/test_files/x goodstring x.dat":
       """
       some data 2.
       """
-    Then the result atom should be empty.
+    Then the result atom should be empty
     When the following data is written to "target/test_files/goodstring.dat":
       """
       some data 3.
       """
-    Then the following data should be in the result atom.
+    Then the following data should be in the result atom
       """
-      some data 4.
+      some data 3.
+
       """

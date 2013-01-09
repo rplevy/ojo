@@ -28,7 +28,7 @@
                       (if appended-only?
                         (str "\n" (slurp file))
                         (with-open [rdr (io/reader file)]
-                          (slurp (.skip rdr bit-position)))))))))
+                          (slurp (doto rdr (.skip (or bit-position 0)))))))))))
     (start-watch watcher)))
 
 (defn -main [& [env & args]]

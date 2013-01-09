@@ -1,5 +1,6 @@
 (require '[midje.sweet :refer :all]
-         '[fs.core :as fs])
+         '[fs.core :as fs]
+         '[example.watcher :as watcher])
 
 (import 'java.io.File
         'org.apache.commons.io.FileUtils)
