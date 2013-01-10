@@ -6,4 +6,6 @@ chmod +x lein2
 fi
 
 ./lein2 midje
-./lein2 cucumber
+
+cd example
+../lein2 cucumber
