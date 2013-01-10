@@ -1,0 +1,5 @@
+language: clojure
+script: sh ./etc/midje-travis
+branches:
+  only:
+    - master

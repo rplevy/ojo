@@ -8,6 +8,8 @@ A parallel event handling worker system is optionally provided for high-performa
 
 This code has been deployed in production as the file-watching engine for an application that constantly responds to changes in large amounts of data. It is known to perform well on Windows, Linux, and Mac OS file systems (Mac is known to have longer response latencies due to the lack of native file events).
 
+**Build status:** [![Build Status](https://secure.travis-ci.org/drakerlabs/ojo.png?branch=master)](http://travis-ci.org/drakerlabs/ojo)
+
 ## Dependency Coordinates
 
 https://clojars.org/ojo

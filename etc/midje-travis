@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ ! -f lein2 ]
+then wget https://raw.github.com/technomancy/leiningen/preview/bin/lein -O lein2
+chmod +x lein2
+fi
+
+./lein2 midje
+./lein2 cucumber
