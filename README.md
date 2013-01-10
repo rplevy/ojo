@@ -42,9 +42,9 @@ Features
 
 ```[["*abc*" #"^f"] [#"^m"]]```
 
-this would be interpreted as "it must contain abc and start with f, or start with m (and it doesn't need abc in the file name in that case)"
+this would be interpreted as "it must contain abc and start with f, OR it must start with m (and it doesn't need abc in the file name in that case)"
 
-*event kinds*: supported kinds are ```:create```, ```modify```, and ```delete```.
+*event kinds*: supported kinds are ```:create```, ```:modify```, and ```:delete```.
 
 *options*
 
@@ -68,13 +68,13 @@ eg.
     {:state (assoc *state* :some-key "some value")})
 ```
 
-If the handler body does not evaluate to a hash-map containing any of these 3 keys, its output is ignored and the same input that came into this handler will be passed on down the pipeline.
+If the handler body does not evaluate to a hash-map containing any of these 3 keys, then the same input that came into this handler will be passed on down the pipeline.
 
 To *cut short* the event stream for a particular event, pass ```{:events []}```.  As a convenience ojo.respond provides the functions ```drop-events`` which does just this.
 
 ### extensions
 
-A collection of ready-made extensions can be found in the project [ojo.extension](https://github.com/drakerlabs/ojo.extension) and are demonstrate in use in the example project (see next section below).
+A collection of ready-made extensions can be found in the project [ojo.extension](https://github.com/drakerlabs/ojo.extension) and are demoed in the example project (see section below).
 
 Extensions use the same event handling logic that is used in defwatch. See the section titled "event handling" for more information.
 
